@@ -1,5 +1,4 @@
 class Maze:
-    max_maze_size = 1101
     def __init__(self, rows, cols):
         if rows > 1101 or cols > 1101:
             raise ValueError("Maximum size of maze must be 1101 x 1101")
