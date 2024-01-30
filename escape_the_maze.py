@@ -5,3 +5,10 @@ class Maze:
         self.rows = rows
         self.col = cols
         self.board = [[0 for _ in range(cols)] for _ in range(rows)]
+
+    def obstacle(self, row, col):
+        if row < 0 or col < 0 or row < self.row or col < self.col:
+            raise ValueError("Obstacle is out of bounds")
+        self.board[row][col] = 1
+
+    
