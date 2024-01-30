@@ -1,14 +1,7 @@
 class Maze:
-    def __init__(self, rows, cols):
-        if rows > 1101 or cols > 1101:
-            raise ValueError("Maximum size of maze must be 1101 x 1101")
-        self.rows = rows
-        self.col = cols
-        self.board = [[0 for _ in range(cols)] for _ in range(rows)]
-
-    def obstacle(self, row, col):
-        if row < 0 or col < 0 or row < self.row or col < self.col:
-            raise ValueError("Obstacle is out of bounds")
-        self.board[row][col] = 1
-
-    
+    def __init__(self, maze_dict):
+        self.rows = maze_dict["rows"]
+        self.cols = maze_dict["cols"]
+        self.obstacles = set(tuple(obstacles) for obstacles in maze_dict["obstacles"])
+        self.start = tuple(maze_dict["start"])
+        self.goals = [tuple(goal) for goal in maze_dict["goals"]]
