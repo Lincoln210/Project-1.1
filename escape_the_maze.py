@@ -18,3 +18,25 @@ def dfs_search(maze_dict):
 
     return []
 
+def neighbors(position, maze_dict):
+    row = position[0]
+    col = position[1]
+    neighbors = []
+
+    # move up
+    if row > 0:
+        neighbors.append((row - 1, col))
+
+    # move down
+    if row < maze_dict["rows"]:
+        neighbors.append((row + 1, col))
+
+    # move left
+    if col > 0:
+        neighbors.append((row, col - 1))
+
+    # move right
+    if col < maze_dict["cols"]:
+        neighbors.append((row, col + 1))    
+
+    return neighbors
