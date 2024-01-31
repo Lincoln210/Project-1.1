@@ -16,3 +16,5 @@ def dfs_search(maze_dict):
             if neighbor not in visited:
                 frontier.append(neighbor, path.append(neighbor))
 
+    return []
+
